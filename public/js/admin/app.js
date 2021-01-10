@@ -43331,7 +43331,7 @@ function warning(notification) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\hive-talent-assessment-php-laravel7\resources\js\admin\app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\hive-talent-assessment-htun-aung-lin\resources\js\admin\app.js */"./resources/js/admin/app.js");
 
 
 /***/ })

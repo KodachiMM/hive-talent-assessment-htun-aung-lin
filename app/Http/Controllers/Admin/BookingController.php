@@ -13,7 +13,24 @@ class BookingController extends Controller
 {
     public function all()
     {
-        $bookings = Booking::with('services')->paginate(10);
+        $bookings = Booking::with('services')
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+        return response()->json($bookings);
+    }
+
+    public function search($name)
+    {
+        $bookings = Booking::with('services')
+            ->where('booking_date', 'LIKE', '%' . $name . '%')
+            ->orWhere('customer_name', 'LIKE', '%' . $name . '%')
+            ->orWhere('car_number', 'LIKE', '%' . $name . '%')
+            ->orWhere('duration', 'LIKE', '%' . $name . '%')
+            ->orWhere('booking_status', 'LIKE', '%' . $name . '%')
+            ->orWhere('total_amount', 'LIKE', '%' . $name . '%')
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+
         return response()->json($bookings);
     }
 

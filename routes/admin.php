@@ -11,6 +11,7 @@ Route::prefix('admin')->group(function () {
         Route::view('bookings', 'admin.bookings');
         Route::prefix('bookings')->group(function () {
             Route::get('all', 'BookingController@all');
+            Route::get('search/{name}', 'BookingController@search');
             Route::post('create', 'BookingController@create');
             Route::post('update', 'BookingController@update');
             Route::get('delete/{id}', 'BookingController@delete');
